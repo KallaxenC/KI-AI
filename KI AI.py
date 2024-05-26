@@ -1,3 +1,4 @@
+#CREDITS TO KALLAXENC. ALL CODE BELOW IS COPYRIGHT KALLAXENC. PLEASE DO NOT CLAIM CODE AS YOURS.
 import webbrowser
 from time import sleep
 from tkinter import *
