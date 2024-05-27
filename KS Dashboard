@@ -1,0 +1,199 @@
+import webbrowser
+from tkinter import messagebox
+from time import sleep
+from tkinter import *
+response="Nothing Yet."
+#Headers and windows
+mw = Tk()
+mw.title("KS Dashboard")
+header1 = Label(mw, text="Welcome to the KS Dashboard.")
+header2 = Label(mw, text= "Tools -->")
+#Default Text
+intro = Label(mw, text="Searching Tool:")
+info1 = Label(mw, text="Search for things using the input box below.")
+
+header1.grid(column=0, row=0)
+header2.grid(column=0, row=1)
+intro.grid(column=1, row=2)
+info1.grid(column=1, row=3)
+
+header1.grid_rowconfigure(0, weight=1)
+header2.grid_rowconfigure(0, weight=1)
+intro.grid_rowconfigure(0, weight=1)
+info1.grid_rowconfigure(0, weight=1)
+header1.grid_columnconfigure(0, weight=1)
+header2.grid_columnconfigure(0, weight=1)
+intro.grid_columnconfigure(0, weight=1)
+info1.grid_columnconfigure(0, weight=1)
+
+#Conversation
+historyHeading = Label(mw, text="You Previously Searched:")
+history = Label(mw, text=f"---> {response}")
+currentfunction = Label(mw, text="STATUS: Not currently searching anything, \n so how about searching for \nsomething using the text box below?")
+currentfunction.grid(column=1, row=4)
+
+historyHeading.grid(column=1, row=5)
+history.grid(column=1, row=6)
+currentfunction.grid_rowconfigure(0, weight=1)
+historyHeading.grid_rowconfigure(0, weight=1)
+history.grid_rowconfigure(0, weight=1)
+currentfunction.grid_columnconfigure(0, weight=1)
+historyHeading.grid_columnconfigure(0, weight=1)
+history.grid_columnconfigure(0, weight=1)
+
+#Search bar
+questionLabel = Label(mw, text="Input a thing you want to search")
+searchBox = Entry(mw, width=20)
+
+
+def searchFor():
+    response = searchBox.get()
+
+    history.configure(text=f"---> {response}")
+    webbrowser.open(
+        f"https://www.google.com/search?q={response}&rlz=1C1CHZN_enGB1034GB1040&oq=geometry+dash&aqs=chrome.0.69i59j46i67i131i433i650j46i67i433i650j0i67i131i433i650j69i60j5j69i61l2.2999j0j7&sourceid=chrome&ie=UTF-8")
+    currentfunction.configure(text=f"Finished Searching for {response}")
+
+
+searchButton = Button(mw, text="Enter", command=searchFor)
+questionLabel.grid(column=1, row=7)
+searchBox.grid(column=1, row=8)
+searchButton.grid(column=1, row=9)
+questionLabel.grid_rowconfigure(0, weight=1)
+searchBox.grid_rowconfigure(0, weight=1)
+searchButton.grid_rowconfigure(0, weight=1)
+questionLabel.grid_columnconfigure(0, weight=1)
+searchBox.grid_columnconfigure(0, weight=1)
+searchButton.grid_columnconfigure(0, weight=1)
+
+
+
+#Web Buttons function
+webButtonsHeader = Label(mw, text="Useful Web Searches:")
+webButtonsInfo1 = Label(mw, text="Click any of the buttons \nto be redirected to the website.")
+
+#Functions for buttons of this section:
+def senOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("https://app.senecalearning.com/courses/login")
+    del tempans
+
+def claOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("https://www.classcharts.com/mobile/student")
+    del tempans
+
+def teaOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("https://www.microsoft.com/en-gb/microsoft-teams/group-chat-software")
+    del tempans
+
+def spaOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("https://auth.sparxmaths.uk/oauth2/auth?client_id=sparx-maths-sw&hd=009b65cc-12f9-41ac-9028-bd0b7ca2935d&redirect_uri=https%3A%2F%2Fstudentapi.api.sparxmaths.uk%2Foauth%2Fcallback&response_type=code&scope=openid+profile+email&state=GA7njzOvl9jaJ6iBykA9ox7IwQUumdIdUWMDVxiNCrPn0ji0GD4LcBO3rx33XybkBLtUpHrNkBfhr4xGpp3zCTYzsGTUVdanoEY6zdWlLJP6ULeYa7ROZewvmm98pJnCw-fJIMJ_L31QUHDhm2EG5YK4hxsMW31FCnAIz9HNpxBleNfdCYDdwr3ZeB49e5KkHYgOT2-n0BW0XZnIUTXhi12Mac3kXpmkqxOUkpbUoJz4vr2CRFyhiEBm4Qo%3D")
+    del tempans
+
+def amaOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("www.amazon.com")
+    del tempans
+
+def quiOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("https://quizizz.com/join?ref=header_tab&lng=en")
+    del tempans
+
+def bloOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("https://play.blooket.com/play")
+    del tempans
+
+def youOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("www.youtube.com")
+    del tempans
+
+def outOC():
+    tempans = messagebox.askyesno(title="Redirect?", message="Redirect to webpage?")
+    if tempans == True:
+        webbrowser.open("www.outlook.com")
+    del tempans
+
+webButtonsHeader.grid(column=2, row=2)
+webButtonsInfo1.grid(column=2, row=3, pady=(0,10))
+webButtonsHeader.grid_rowconfigure(0, weight=1)
+webButtonsInfo1.grid_rowconfigure(0, weight=1)
+webButtonsHeader.grid_columnconfigure(0, weight=1)
+webButtonsInfo1.grid_columnconfigure(0, weight=1)
+
+senacca = Button(
+    mw, text="  Senacca  ", bg="lightblue", command=senOC
+)
+classCharts = Button(
+    mw, text="ClassCharts", bg="lightyellow", command=claOC
+)
+microsoftTeams = Button(
+    mw, text="   Teams   ", bg="steelblue", command=teaOC
+)
+senacca.grid(column=2, row=4, padx=(0,150))
+classCharts.grid(column=2, row=4)
+microsoftTeams.grid(column=2, row=4, padx=(148,0))
+senacca.grid_rowconfigure(0, weight=1)
+classCharts.grid_rowconfigure(0, weight=1)
+microsoftTeams.grid_rowconfigure(0, weight=1)
+senacca.grid_columnconfigure(0, weight=1)
+classCharts.grid_columnconfigure(0, weight=1)
+microsoftTeams.grid_columnconfigure(0, weight=1)
+
+senacca1 = Button(
+    mw, text="  Amazon   ", bg="orange", command=amaOC
+)
+classCharts1 = Button(
+    mw, text="     Sparx     ", bg="dodgerblue", command=spaOC
+)
+microsoftTeams1 = Button(
+    mw, text="   Quizizz  ", bg="slateblue1", command=quiOC
+)
+senacca1.grid(column=2, row=4, padx=(0,150), pady=(80,0))
+classCharts1.grid(column=2, row=4, pady=(80,0))
+microsoftTeams1.grid(column=2, row=4, padx=(148,0), pady=(80,0))
+senacca1.grid_rowconfigure(0, weight=1)
+classCharts1.grid_rowconfigure(0, weight=1)
+microsoftTeams1.grid_rowconfigure(0, weight=1)
+senacca1.grid_columnconfigure(0, weight=1)
+classCharts1.grid_columnconfigure(0, weight=1)
+microsoftTeams1.grid_columnconfigure(0, weight=1)
+
+senacca2 = Button(
+    mw, text="  Blooket  ", bg="cyan2", command=bloOC
+)
+classCharts2 = Button(
+    mw, text="  Youtube  ", bg="Red", command=youOC
+)
+microsoftTeams2 = Button(
+    mw, text="  Outlook  ", bg="DeepSkyBlue4", command=outOC
+)
+senacca2.grid(column=2, row=5, padx=(0,150), pady=(14,0))
+classCharts2.grid(column=2, row=5, pady=(14,0))
+microsoftTeams2.grid(column=2, row=5, padx=(148,0), pady=(14,0))
+senacca2.grid_rowconfigure(0, weight=1)
+classCharts2.grid_rowconfigure(0, weight=1)
+microsoftTeams2.grid_rowconfigure(0, weight=1)
+senacca2.grid_columnconfigure(0, weight=1)
+classCharts2.grid_columnconfigure(0, weight=1)
+microsoftTeams2.grid_columnconfigure(0, weight=1)
+
+
+#Calculator Code
+
+#print(f"Searching for: {ques}")
+#webbrowser.open(f"https://www.google.com/search?q={ques}&rlz=1C1CHZN_enGB1034GB1040&oq=geometry+dash&aqs=chrome.0.69i59j46i67i131i433i650j46i67i433i650j0i67i131i433i650j69i60j5j69i61l2.2999j0j7&sourceid=chrome&ie=UTF-8")
+mw.mainloop()
