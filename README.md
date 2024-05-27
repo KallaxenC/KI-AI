@@ -16,30 +16,4 @@ V2
 
 That's all I could think of for now.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Credit to Anthony Bird for my coding motivation.
+Note: THIS PROJECT IS BEING TEMPORARLY ABANDONED BECAUSE AI PLANS COST MONEY
